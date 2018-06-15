@@ -1,42 +1,42 @@
 {
   "user": {
-    "#user1": {
+    "user1": {
       "name": "alice"
     }
   },
   "data": {
-    "#data1": {
-      "author": "#user1",
+    "data1": {
+      "author": "user1",
       "path": "http://example.pdf",
       "public": true,
       "thumbnail": "http://source.unsplash.com/uYtyhKO3ygU/800x450"
     },
-    "#data2": {
-      "author": "#user1",
+    "data2": {
+      "author": "user1",
       "path": "http://example.pdf",
       "public": false,
       "thumbnail": "http://source.unsplash.com/mmoyZb1cI0A/800x450"
     },
-    "#data3": {
-      "author": "#user2",
+    "data3": {
+      "author": "user2",
       "path": "http://example.pdf",
       "public": true,
       "thumbnail": "http://source.unsplash.com/5d41p_9vlOk/800x450"
     },
-    "#data4": {
-      "author": "#user2",
+    "data4": {
+      "author": "user2",
       "path": "http://example.pdf",
       "public": true,
       "thumbnail": "http://source.unsplash.com/q5AR3dSnVVQ/800x450"
     },
-    "#data5": {
-      "author": "#user2",
+    "data5": {
+      "author": "user2",
       "path": "http://example.pdf",
       "public": true,
       "thumbnail": "http://source.unsplash.com/_pc8aMbI9UQ/800x450"
     },
-    "#data6": {
-      "author": "#user3",
+    "data6": {
+      "author": "user3",
       "path": "http://example.pdf",
       "public": true,
       "thumbnail": "http://source.unsplash.com/YfCVCPMNd38/800x450"

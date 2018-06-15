@@ -16,6 +16,9 @@ const upload = {
     width: 320,
     textAlign: 'left'
   },
+  divButton: {
+    paddingTop: 36
+  },
   input: {
     display: 'none'
   }

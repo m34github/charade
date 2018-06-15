@@ -1,31 +1,18 @@
-import axios from 'axios';
+import { db } from '../.env/firebase.config';
 
 // action
-const LOAD_MY_DATA = 'LOAD_MY_DATA';
-const LOAD_PUBLIC_DATA = 'LOAD_PUBLIC_DATA';
+const LOAD_DATA = 'LOAD_DATA';
 
-const loadMyData = () => (dispatch) => {
-  axios.get('http://localhost:5000/assets/data/database.json')
-    .then((d) => {
-      const myData = Object.values(d.data.data).filter(v => v.author === '#user1');
-
-      dispatch({
-        type: LOAD_MY_DATA,
-        payload: {
-          myData
-        }
-      });
-    });
-};
-
-const loadPublicData = () => (dispatch) => {
-  axios.get('http://localhost:5000/assets/data/database.json')
-    .then((d) => {
-      const publicData = Object.values(d.data.data).filter(v => v.public === true);
+const loadData = user => (dispatch) => {
+  db.ref('data').once('value')
+    .then((snapshot) => {
+      const myData = Object.values(snapshot.val()).filter(v => v.author === user.uid);
+      const publicData = Object.values(snapshot.val()).filter(v => v.public === true);
 
       dispatch({
-        type: LOAD_PUBLIC_DATA,
+        type: LOAD_DATA,
         payload: {
+          myData,
           publicData
         }
       });
@@ -40,13 +27,9 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOAD_MY_DATA: {
+    case LOAD_DATA: {
       return Object.assign({}, state, {
-        myData: action.payload.myData
-      });
-    }
-    case LOAD_PUBLIC_DATA: {
-      return Object.assign({}, state, {
+        myData: action.payload.myData,
         publicData: action.payload.publicData
       });
     }
@@ -56,5 +39,5 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export { loadMyData, loadPublicData };
+export { loadData };
 export default reducer;

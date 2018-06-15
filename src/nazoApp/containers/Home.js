@@ -6,11 +6,8 @@ import * as action from '../modules/home';
 const mapStateToProps = state => state;
 
 const mapDispatchToProps = dispatch => ({
-  loadMyData: () => {
-    dispatch(action.loadMyData());
-  },
-  loadPublicData: () => {
-    dispatch(action.loadPublicData());
+  loadData: (user) => {
+    dispatch(action.loadData(user));
   }
 });
 

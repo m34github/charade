@@ -6,8 +6,8 @@ import * as action from '../modules/upload';
 const mapStateToProps = state => state;
 
 const mapDispatchToProps = dispatch => ({
-  uploadFile: (file) => {
-    dispatch(action.uploadFile(file));
+  uploadFile: (user, info) => {
+    dispatch(action.uploadFile(user, info));
   }
 });
 
