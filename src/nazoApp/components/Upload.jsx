@@ -67,6 +67,7 @@ class Upload extends React.Component {
                 onChange={(e) => { this.load(e.target.files[0]); }}
                 style={style.upload.input}
                 type="file"
+                accept="application/pdf"
               />
               <label htmlFor="localFile">
                 <Button basic color="violet" as="span" style={style.upload.button}>
